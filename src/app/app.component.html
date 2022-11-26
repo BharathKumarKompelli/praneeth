@@ -1,0 +1,32 @@
+<form [formGroup]="submitForm" (ngSubmit)="onSubmit()">
+  <div class="container d-flex flex-column p-5">
+    <mat-form-field appearance="fill" class="col-3">
+      <mat-label>Entity List</mat-label>
+      <mat-select formControlName="selectedEntity">
+        <mat-option *ngFor="let item of list1" [value]="item.API">{{
+          item.Description
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="col-3">
+      <mat-label>Entity List</mat-label>
+      <mat-select formControlName="selectedEntity">
+        <mat-option *ngFor="let item of list2" [value]="item.id">{{
+          item.value
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="d-flex flex-row justify-content-center">
+    <button
+      mat-raised-button
+      class="col-3 text-center"
+      color="primary"
+      type="submit"
+    >
+      Primary
+    </button>
+  </div>
+</form>
